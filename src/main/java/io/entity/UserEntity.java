@@ -1,19 +1,39 @@
-package shared.dto;
+package io.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
-public class UserDto implements Serializable {
+@Entity(name="users")
+public class UserEntity implements Serializable {
 
-    private static final long serialVersionUID = 6502525672557999807L;
+
+    private static final long serialVersionUID = -3542835845347281152L;
+
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column(nullable = false)
     private String userId;
+
+    @Column(nullable = false, length=50)
     private String firstName;
+
+    @Column(nullable = false, length=50)
     private String lastName;
+
+    @Column(nullable = false, length=120)
     private String email;
-    private String password;
+
+    @Column(nullable = false )
     private String encryptedPassword;
     private String emailVerificationToken;
-    private String emailVerificationStatus;
+
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private Boolean emailVerificationStatus;
 
     public long getId() {
         return id;
@@ -55,14 +75,6 @@ public class UserDto implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEncryptedPassword() {
         return encryptedPassword;
     }
@@ -79,11 +91,11 @@ public class UserDto implements Serializable {
         this.emailVerificationToken = emailVerificationToken;
     }
 
-    public String getEmailVerificationStatus() {
+    public Boolean getEmailVerificationStatus() {
         return emailVerificationStatus;
     }
 
-    public void setEmailVerificationStatus(String emailVerificationStatus) {
+    public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
         this.emailVerificationStatus = emailVerificationStatus;
     }
 }
