@@ -1,12 +1,12 @@
-package controller;
+package com.tbetcha.app.ws.ui.controller;
 
-import model.request.UserDetailsRequestModel;
-import model.response.UserRest;
+import com.tbetcha.app.ws.model.request.UserDetailsRequestModel;
+import com.tbetcha.app.ws.model.response.UserRest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.UserService;
-import shared.dto.UserDto;
+import com.tbetcha.app.ws.service.UserService;
+import com.tbetcha.app.ws.shared.dto.UserDto;
 
 @RestController
 @RequestMapping("users") //http://localhost:8080/users
