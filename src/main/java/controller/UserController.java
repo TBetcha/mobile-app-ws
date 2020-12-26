@@ -1,6 +1,7 @@
-package com.tbetcha.app.ws.ui.controller;
+package controller;
 
-import com.tbetcha.app.ws.ui.model.request.UserDetailsRequestModel;
+import model.request.UserDetailsRequestModel;
+import model.response.UserRest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,8 +15,8 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser(@RequestBody UserDetailsRequestModel userDetails){
-        return "Create user was called";
+    public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails){
+        return null;
     }
 
     @PutMapping
