@@ -1,7 +1,7 @@
 package com.tbetcha.app.ws.ui.controller;
 
-import com.tbetcha.app.ws.model.request.UserDetailsRequestModel;
-import com.tbetcha.app.ws.model.response.UserRest;
+import com.tbetcha.app.ws.ui.model.request.UserDetailsRequestModel;
+import com.tbetcha.app.ws.ui.model.response.UserRest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

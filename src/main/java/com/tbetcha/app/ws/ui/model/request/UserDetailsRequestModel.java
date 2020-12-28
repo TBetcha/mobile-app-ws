@@ -1,4 +1,4 @@
-package com.tbetcha.app.ws.model.request;
+package com.tbetcha.app.ws.ui.model.request;
 
 public class UserDetailsRequestModel {
     private String firstName;
