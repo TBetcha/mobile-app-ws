@@ -1,6 +1,6 @@
 package com.tbetcha.app.ws.service.impl;
 
-import com.tbetcha.app.ws.UserRepository;
+import com.tbetcha.app.ws.io.repositories.UserRepository;
 import com.tbetcha.app.ws.io.entity.UserEntity;
 import com.tbetcha.app.ws.service.UserService;
 import com.tbetcha.app.ws.shared.Utils;
@@ -43,6 +43,16 @@ public class UserServiceImpl implements UserService {
 
         UserDto returnValue = new UserDto();
         BeanUtils.copyProperties(storedUserDetails, returnValue);
+        return returnValue;
+    }
+
+    @Override
+    public UserDto getUser(String email){
+        UserEntity userEntity = userRepository.findByEmail(email);
+
+        if(userEntity == null) throw new UsernameNotFoundException(email);
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
         return returnValue;
     }
 

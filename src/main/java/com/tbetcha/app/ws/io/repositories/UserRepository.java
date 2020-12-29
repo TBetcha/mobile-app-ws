@@ -1,4 +1,4 @@
-package com.tbetcha.app.ws;
+package com.tbetcha.app.ws.io.repositories;
 
 import com.tbetcha.app.ws.io.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
